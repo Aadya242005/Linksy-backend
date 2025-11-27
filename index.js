@@ -64,5 +64,10 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Error:", err));
 
-/* ---- 🚨 IMPORTANT: Export app (NO app.listen) ---- */
-export default app;
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`🚀 Server running on port ${port}`);
+});
+
